@@ -1,9 +1,6 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from author.views import AuthorViewSet
-app_name = "author"  # спочатку!
 router = DefaultRouter()
 router.register("authors", AuthorViewSet, basename="manage")
-urlpatterns = [
-    path("", include(router.urls)),
-]
+urlpatterns = router.urls
